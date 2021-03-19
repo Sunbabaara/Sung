@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from "react";
+import NavComp from "./components/NavComp";
+import FormComp from "./components/FormComp";
+import Footer from "./components/Footer";
 
 function App() {
+  //states for input
+  const [breakfast, setBreakfast]=useState(
+    [ "Oatsmeal", "Mole Porridge", "wheatmeal", "Tombrown", "Tea", "Omlet"
+  ])
+  const [snack, setSnack]=useState([
+    "cake", "chips", "biscuit", "meatpie", "softdrinks"])
+  const [lunch, setLunch]=useState([
+    "rice", "banku", "fufu", "riceballs", "jollof", "waakye"])
+  
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <>
+      <NavComp/>
+      <FormComp/>
+      <Footer/>
+      </>
     </div>
   );
 }
